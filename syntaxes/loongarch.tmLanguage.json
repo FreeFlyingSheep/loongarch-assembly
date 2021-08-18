@@ -1,0 +1,273 @@
+{
+  "name": "LoongArch Assembly",
+  "scopeName": "source.loongarch",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#labels"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#constants"
+    },
+    {
+      "include": "#registers"
+    },
+    {
+      "include": "#opcodes"
+    },
+    {
+      "include": "#supports"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "include": "#block_comments"
+        },
+        {
+          "include": "#line_comments"
+        }
+      ]
+    },
+    "block_comments": {
+      "begin": "/\\*",
+      "end": "\\*/",
+      "name": "comment.block.loongarch"
+    },
+    "line_comments": {
+      "match": "(//.*$)|(#\\s+.*$)",
+      "name": "comment.line.loongarch"
+    },
+    "labels": {
+      "patterns": [
+        {
+          "include": "#normal_labels"
+        },
+        {
+          "include": "#jmp_number_labels"
+        }
+      ]
+    },
+    "normal_labels": {
+      "match": "^\\s*.*:",
+      "name": "entity.name.tag.loongarch"
+    },
+    "jmp_number_labels": {
+      "match": "\\b\\d+(b|f)\\b",
+      "name": "entity.name.tag.loongarch"
+    },
+    "strings": {
+      "begin": "\"",
+      "patterns": [
+        {
+          "include": "#escape_constants"
+        }
+      ],
+      "end": "\"",
+      "name": "string.quoted.loongarch"
+    },
+    "constants": {
+      "patterns": [
+        {
+          "include": "#character_constants"
+        },
+        {
+          "include": "#escape_constants"
+        },
+        {
+          "include": "#numeric_constants"
+        }
+      ]
+    },
+    "character_constants": {
+      "begin": "'",
+      "patterns": [
+        {
+          "include": "#escape_constants"
+        }
+      ],
+      "end": "'",
+      "name": "constant.character.loongarch"
+    },
+    "escape_constants": {
+      "match": "\\\\n|\\\\0",
+      "name": "constant.character.escape.loongarch"
+    },
+    "numeric_constants": {
+      "patterns": [
+        {
+          "include": "#binary_constants"
+        },
+        {
+          "include": "#octal_constants"
+        },
+        {
+          "include": "#decimal_constants"
+        },
+        {
+          "include": "#hexadecimal_constants"
+        }
+      ]
+    },
+    "binary_constants": {
+      "match": "\\b0(b|B)[0-1]+\\b",
+      "name": "constant.character.numeric.loongarch"
+    },
+    "octal_constants": {
+      "match": "\\b0[0-7]+\\b",
+      "name": "constant.character.numeric.loongarch"
+    },
+    "decimal_constants": {
+      "match": "\\b((0\\b)|([1-9][0-9]*\\b))",
+      "name": "constant.character.numeric.loongarch"
+    },
+    "hexadecimal_constants": {
+      "match": "\\b0(x|X)[0-9a-fA-F]+\\b",
+      "name": "constant.character.numeric.loongarch"
+    },
+    "registers": {
+      "patterns": [
+        {
+          "include": "#r_normal_registers"
+        },
+        {
+          "include": "#r_lp64_registers"
+        },
+        {
+          "include": "#f_normal_registers"
+        },
+        {
+          "include": "#f_lp64_registers"
+        },
+        {
+          "include": "#c_normal_registers"
+        },
+        {
+          "include": "#cr_normal_registers"
+        },
+        {
+          "include": "#v_normal_registers"
+        },
+        {
+          "include": "#x_normal_registers"
+        }
+      ]
+    },
+    "r_normal_registers": {
+      "match": "\\b\\$(r9|r8|r7|r6|r5|r4|r31|r30|r3|r29|r28|r27|r26|r25|r24|r23|r22|r21|r20|r2|r19|r18|r17|r16|r15|r14|r13|r12|r11|r10|r1|r0)\\b",
+      "name": "storage.loongarch"
+    },
+    "r_lp64_registers": {
+      "match": "\\b\\$?(zero|x|v1|v0|tp|t8|t7|t6|t5|t4|t3|t2|t1|t0|sp|s8|s7|s6|s5|s4|s3|s2|s1|s0|ra|fp|a7|a6|a5|a4|a3|a2|a1|a0)\\b",
+      "name": "storage.loongarch"
+    },
+    "f_normal_registers": {
+      "match": "\\b\\$(f9|f8|f7|f6|f5|f4|f31|f30|f3|f29|f28|f27|f26|f25|f24|f23|f22|f21|f20|f2|f19|f18|f17|f16|f15|f14|f13|f12|f11|f10|f1|f0)\\b",
+      "name": "storage.loongarch"
+    },
+    "f_lp64_registers": {
+      "match": "\\b\\$?(fv1|fv0|ft9|ft8|ft7|ft6|ft5|ft4|ft3|ft2|ft15|ft14|ft13|ft12|ft11|ft10|ft1|ft0|fs7|fs6|fs5|fs4|fs3|fs2|fs1|fs0|fa7|fa6|fa5|fa4|fa3|fa2|fa1|fa0)\\b",
+      "name": "storage.loongarch"
+    },
+    "c_normal_registers": {
+      "match": "\\b\\$(scr3|scr2|scr1|scr0)\\b",
+      "name": "storage.loongarch"
+    },
+    "cr_normal_registers": {
+      "match": "\\b\\$(fcc7|fcc6|fcc5|fcc4|fcc3|fcc2|fcc1|fcc0)\\b",
+      "name": "storage.loongarch"
+    },
+    "v_normal_registers": {
+      "match": "\\b\\$(vr9|vr8|vr7|vr6|vr5|vr4|vr31|vr30|vr3|vr29|vr28|vr27|vr26|vr25|vr24|vr23|vr22|vr21|vr20|vr2|vr19|vr18|vr17|vr16|vr15|vr14|vr13|vr12|vr11|vr10|vr1|vr0)\\b",
+      "name": "storage.loongarch"
+    },
+    "x_normal_registers": {
+      "match": "\\b\\$(xr9|xr8|xr7|xr6|xr5|xr4|xr31|xr30|xr3|xr29|xr28|xr27|xr26|xr25|xr24|xr23|xr22|xr21|xr20|xr2|xr19|xr18|xr17|xr16|xr15|xr14|xr13|xr12|xr11|xr10|xr1|xr0)\\b",
+      "name": "storage.loongarch"
+    },
+    "opcodes": {
+      "patterns": [
+        {
+          "include": "#macro_opcodes"
+        },
+        {
+          "include": "#fix_opcodes"
+        },
+        {
+          "include": "#float_opcodes"
+        },
+        {
+          "include": "#lmm_opcodes"
+        },
+        {
+          "include": "#privilege_opcodes"
+        },
+        {
+          "include": "#4opt_opcodes"
+        },
+        {
+          "include": "#load_store_opcodes"
+        },
+        {
+          "include": "#jmp_opcodes"
+        }
+      ]
+    },
+    "macro_opcodes": {
+      "match": "\\b(li\\.w|li\\.d|la\\.tls\\.le|la\\.tls\\.ld|la\\.tls\\.ie|la\\.tls\\.gd|la\\.pcrel|la\\.local|la\\.got|la\\.global|la\\.abs|la)\\b",
+      "name": "entity.name.type.loongarch"
+    },
+    "fix_opcodes": {
+      "match": "\\b(xor|syscall|sub\\.w|sub\\.d|srl\\.w|srli\\.w|srli\\.d|srl\\.d|sra\\.w|srai\\.w|srai\\.d|sra\\.d|sltu|slt|sll\\.w|slli\\.w|slli\\.d|sll\\.d|rotr\\.w|rotri\\.w|rotri\\.d|rotr\\.d|revh\\.d|revh\\.2w|revb\\.d|revb\\.4h|revb\\.2w|revb\\.2h|rdtimel\\.w|rdtimeh\\.w|rdtime\\.d|orn|or|nor|mulw\\.d\\.wu|mulw\\.d\\.w|mul\\.w|mulh\\.wu|mulh\\.w|mulh\\.du|mulh\\.d|mul\\.d|move|mod\\.wu|mod\\.w|mod\\.du|mod\\.d|masknez|maskeqz|ext\\.w\\.h|ext\\.w\\.b|div\\.wu|div\\.w|div\\.du|div\\.d|dbcl|ctz\\.w|ctz\\.d|cto\\.w|cto\\.d|crc\\.w\\.w\\.w|crc\\.w\\.h\\.w|crc\\.w\\.d\\.w|crc\\.w\\.b\\.w|crcc\\.w\\.w\\.w|crcc\\.w\\.h\\.w|crcc\\.w\\.d\\.w|crcc\\.w\\.b\\.w|cpucfg|clz\\.w|clz\\.d|clo\\.w|clo\\.d|bytepick\\.w|bytepick\\.d|bstrpick\\.w|bstrpick\\.d|bstrins\\.w|bstrins\\.d|break|bitrev\\.w|bitrev\\.d|bitrev\\.8b|bitrev\\.4b|asrtle\\.d|asrtgt\\.d|andn|and|alsl\\.wu|alsl\\.w|alsl\\.d|add\\.w|add\\.d)\\b",
+      "name": "entity.name.type.loongarch"
+    },
+    "float_opcodes": {
+      "match": "\\b(movgr2fr\\.w|movgr2frh\\.w|movgr2fr\\.d|movgr2fcsr|movgr2cf|movfrh2gr\\.s|movfr2gr\\.s|movfr2gr\\.d|movfr2cf|movfcsr2gr|movcf2gr|movcf2fr|ftint\\.w\\.s|ftint\\.w\\.d|ftintrz\\.w\\.s|ftintrz\\.w\\.d|ftintrz\\.l\\.s|ftintrz\\.l\\.d|ftintrp\\.w\\.s|ftintrp\\.w\\.d|ftintrp\\.l\\.s|ftintrp\\.l\\.d|ftintrne\\.w\\.s|ftintrne\\.w\\.d|ftintrne\\.l\\.s|ftintrne\\.l\\.d|ftintrm\\.w\\.s|ftintrm\\.w\\.d|ftintrm\\.l\\.s|ftintrm\\.l\\.d|ftint\\.l\\.s|ftint\\.l\\.d|fsub\\.s|fsub\\.d|fsqrt\\.s|fsqrt\\.d|fscaleb\\.s|fscaleb\\.d|frsqrt\\.s|frsqrt\\.d|frint\\.s|frint\\.d|frecip\\.s|frecip\\.d|fneg\\.s|fneg\\.d|fmul\\.s|fmul\\.d|fmov\\.s|fmov\\.d|fmin\\.s|fmin\\.d|fmina\\.s|fmina\\.d|fmax\\.s|fmax\\.d|fmaxa\\.s|fmaxa\\.d|flogb\\.s|flogb\\.d|ffint\\.s\\.w|ffint\\.s\\.l|ffint\\.d\\.w|ffint\\.d\\.l|fdiv\\.s|fdiv\\.d|fcvt\\.s\\.d|fcvt\\.d\\.s|fcopysign\\.s|fcopysign\\.d|fclass\\.s|fclass\\.d|fadd\\.s|fadd\\.d|fabs\\.s|fabs\\.d)\\b",
+      "name": "entity.name.type.loongarch"
+    },
+    "lmm_opcodes": {
+      "match": "\\b(xori|sltui|slti|pcalau12i|pcaddu18i|pcaddu12i|pcaddi|ori|nop|lu52i\\.d|lu32i\\.d|lu12i\\.w|andi|addu16i\\.d|addi\\.w|addi\\.d)\\b",
+      "name": "entity.name.type.loongarch"
+    },
+    "privilege_opcodes": {
+      "match": "\\b(tlbwr|tlbsrch|tlbrd|tlbflush|tlbfill|tlbclr|ldpte|lddir|iocsrwr\\.w|iocsrwr\\.h|iocsrwr\\.d|iocsrwr\\.b|iocsrrd\\.w|iocsrrd\\.h|iocsrrd\\.d|iocsrrd\\.b|invtlb|idle|ertn|csrxchg|csrwr|csrrd|cacop)\\b",
+      "name": "entity.name.type.loongarch"
+    },
+    "4opt_opcodes": {
+      "match": "\\b(fsel|fnmsub\\.s|fnmsub\\.d|fnmadd\\.s|fnmadd\\.d|fmsub\\.s|fmsub\\.d|fmadd\\.s|fmadd\\.d|fcmp\\.sun\\.s|fcmp\\.sune\\.s|fcmp\\.sune\\.d|fcmp\\.sun\\.d|fcmp\\.sult\\.s|fcmp\\.sult\\.d|fcmp\\.sule\\.s|fcmp\\.sule\\.d|fcmp\\.sueq\\.s|fcmp\\.sueq\\.d|fcmp\\.sor\\.s|fcmp\\.sor\\.d|fcmp\\.sne\\.s|fcmp\\.sne\\.d|fcmp\\.slt\\.s|fcmp\\.slt\\.d|fcmp\\.sle\\.s|fcmp\\.sle\\.d|fcmp\\.sgt\\.s|fcmp\\.sgt\\.d|fcmp\\.sge\\.s|fcmp\\.sge\\.d|fcmp\\.seq\\.s|fcmp\\.seq\\.d|fcmp\\.saf\\.s|fcmp\\.saf\\.d|fcmp\\.cun\\.s|fcmp\\.cune\\.s|fcmp\\.cune\\.d|fcmp\\.cun\\.d|fcmp\\.cult\\.s|fcmp\\.cult\\.d|fcmp\\.cule\\.s|fcmp\\.cule\\.d|fcmp\\.cugt\\.s|fcmp\\.cugt\\.d|fcmp\\.cuge\\.s|fcmp\\.cuge\\.d|fcmp\\.cueq\\.s|fcmp\\.cueq\\.d|fcmp\\.cor\\.s|fcmp\\.cor\\.d|fcmp\\.cne\\.s|fcmp\\.cne\\.d|fcmp\\.clt\\.s|fcmp\\.clt\\.d|fcmp\\.cle\\.s|fcmp\\.cle\\.d|fcmp\\.ceq\\.s|fcmp\\.ceq\\.d|fcmp\\.caf\\.s|fcmp\\.caf\\.d)\\b",
+      "name": "entity.name.type.loongarch"
+    },
+    "load_store_opcodes": {
+      "match": "\\b(stx\\.w|stx\\.h|stx\\.d|stx\\.b|st\\.w|stptr\\.w|stptr\\.d|stle\\.w|stle\\.h|stle\\.d|stle\\.b|st\\.h|stgt\\.w|stgt\\.h|stgt\\.d|stgt\\.b|st\\.d|st\\.b|sc\\.w|sc\\.d|preldx|preld|ll\\.w|ll\\.d|ldx\\.wu|ldx\\.w|ldx\\.hu|ldx\\.h|ldx\\.d|ldx\\.bu|ldx\\.b|ld\\.wu|ld\\.w|ldptr\\.w|ldptr\\.d|ldle\\.w|ldle\\.h|ldle\\.d|ldle\\.b|ld\\.hu|ld\\.h|ldgt\\.w|ldgt\\.h|ldgt\\.d|ldgt\\.b|ld\\.d|ld\\.bu|ld\\.b|ibar|fstx\\.s|fstx\\.d|fst\\.s|fstle\\.s|fstle\\.d|fstgt\\.s|fstgt\\.d|fst\\.d|fldx\\.s|fldx\\.d|fld\\.s|fldle\\.s|fldle\\.d|fldgt\\.s|fldgt\\.d|fld\\.d|dbar|amxor\\.w|amxor_db\\.w|amxor_db\\.d|amxor\\.d|amswap\\.w|amswap_db\\.w|amswap_db\\.d|amswap\\.d|amor\\.w|amor_db\\.w|amor_db\\.d|amor\\.d|ammin\\.wu|ammin\\.w|ammin\\.du|ammin_db\\.wu|ammin_db\\.w|ammin_db\\.du|ammin_db\\.d|ammin\\.d|ammax\\.wu|ammax\\.w|ammax\\.du|ammax_db\\.wu|ammax_db\\.w|ammax_db\\.du|ammax_db\\.d|ammax\\.d|amand\\.w|amand_db\\.w|amand_db\\.d|amand\\.d|amadd\\.w|amadd_db\\.w|amadd_db\\.d|amadd\\.d)\\b",
+      "name": "entity.name.type.loongarch"
+    },
+    "jmp_opcodes": {
+      "match": "\\b(jr|jirl|bnez|bne|bltz|bltu|blt|blez|bleu|ble|bl|bgtz|bgtu|bgt|bgez|bgeu|bge|beqz|beq|bcnez|bceqz|b)\\b",
+      "name": "entity.name.type.loongarch"
+    },
+    "supports": {
+      "patterns": [
+        {
+          "include": "#directive_supports"
+        },
+        {
+          "include": "#macro_supports"
+        }
+      ]
+    },
+    "directive_supports": {
+      "match": "^\\s*\\.(zero|word|weakref|weak|warning|vtable_inherit|vtable_entry|version|val|uleb128|type|tls_common|title|text|tag|symver|subsection|struct|string64|stabs|space|sleb128|skip|size|single|short|set|section|scl|sbttl|rept|reloc|quad|pushsection|purgem|psize|protected|print|previous|popsection|p2align|org|offset|octa|nops|nop|nolist|noaltmacro|mri|macro|long|loc_mark_labels|local|loc|ln|list|linkonce|line|lflags|lcomm|irpc|irp|internal|int|include|incbin|if|ident|hword|hidden|gnu_attribute|globl|func|float|fill|file|fail|extern|exitm|error|err|eqv|equiv|equ|endif|endfunc|endef|end|elseif|else|eject|ds[size]|double|dim|desc|def|dc[size]|dcb[size]|data|comm|byte|bundle_align_mode|bss|balign|attach_to_group|asciz|ascii|altmacro|align|ABORT|abort|8byte|4byte|2byte)\\b",
+      "name": "support.function.loongarch"
+    },
+    "macro_supports": {
+      "match": "^\\s*#(warning|undef|unassert|sccs|pragma|line|include_next|include|import|ifndef|ifdef|if|ident|error|endif|else|elif|define|assert)\\b",
+      "name": "support.function.loongarch"
+    }
+  }
+}

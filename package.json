@@ -1,0 +1,45 @@
+{
+    "name": "loongarch-assembly",
+    "displayName": "LoongArch Assembly",
+    "description": "Provides language support for LoongArch assembly language.",
+    "version": "1.0.0",
+    "publisher": "FreeFlyingSheep",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/FreeFlyingSheep/loongarch-assembly"
+    },
+    "icon": "images/icon.png",
+    "engines": {
+        "vscode": "^1.59.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "loongarch",
+                "aliases": [
+                    "LoongArch Assembly",
+                    "loongarch"
+                ],
+                "extensions": [
+                    ".S",
+                    ".s"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "loongarch",
+                "scopeName": "source.loongarch",
+                "path": "./syntaxes/loongarch.tmLanguage.json"
+            }
+        ]
+    },
+    "devDependencies": {
+        "js-yaml": "^4.1.0"
+    }
+}
