@@ -35,7 +35,11 @@ $ npx js-yaml syntaxes/loongarch.tmLanguage.yaml > syntaxes/loongarch.tmLanguage
 
 Initial release of loongarch-assembly.
 
-Added syntax highlighting for LoongArch assembly language.
+Add syntax highlighting for LoongArch assembly language.
+
+### 1.1.0
+
+Add support for comment shortcuts.
 
 ## Reference
 

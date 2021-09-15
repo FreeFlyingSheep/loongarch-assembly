@@ -11,3 +11,9 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ### Added
 
 - Syntax highlighting for LoongArch assembly language.
+
+## [1.1.0] - 2021-09-15
+
+### Added
+
+- Support for comment shortcuts.
