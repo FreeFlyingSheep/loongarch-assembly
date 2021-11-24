@@ -41,12 +41,16 @@ Add syntax highlighting for LoongArch assembly language.
 
 Add support for comment shortcuts.
 
+### 1.1.1
+
+Fix highlighting for terms like `$r0`.
+
 ## Reference
 
 * [Vscode Language Extensions, Syntax Highlight Guide](https://code.visualstudio.com/api/language-extensions/syntax-highlight-guide)
 * [Language Grammars, Naming Conventions](https://macromates.com/manual/en/language_grammars#naming_conventions)
 * [Regular Expressions](https://raw.githubusercontent.com/kkos/oniguruma/master/doc/RE)
-* [LoongArch Opcodes](https://github.com/loongson/binutils-gdb/blob/loongarch-2_37/opcodes/loongarch-opc.c)
+* [LoongArch Opcodes](https://sourceware.org/git/?p=binutils-gdb.git;a=blob;f=opcodes/loongarch-opc.c)
 * [Assembler Directives](https://sourceware.org/binutils/docs/as/Pseudo-Ops.html#Pseudo-Ops)
 * [Directives](https://gcc.gnu.org/onlinedocs/cpp/Index-of-Directives.html#Index-of-Directives_fn_symbol-1)
 * [Test File](https://github.com/loongson/linux/blob/loongarch-next/arch/loongarch/kernel/head.S)

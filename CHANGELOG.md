@@ -17,3 +17,9 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ### Added
 
 - Support for comment shortcuts.
+
+## [1.1.1] - 2021-09-15
+
+### Changed
+
+- Fix highlighting for terms like `$r0`.
