@@ -45,6 +45,10 @@ Add support for comment shortcuts.
 
 Fix highlighting for terms like `$r0`.
 
+### 1.1.2
+
+Fix highlighting for comments like `// xxx: xxx`.
+
 ## Reference
 
 * [Vscode Language Extensions, Syntax Highlight Guide](https://code.visualstudio.com/api/language-extensions/syntax-highlight-guide)

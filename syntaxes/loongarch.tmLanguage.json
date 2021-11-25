@@ -55,7 +55,7 @@
       ]
     },
     "normal_labels": {
-      "match": "^\\s*.*:",
+      "match": "^\\s*\\w+:",
       "name": "entity.name.tag.loongarch"
     },
     "jmp_number_labels": {

@@ -30,7 +30,7 @@ repository:
       - include: '#jmp_number_labels'
   normal_labels:
     # labels (main:)
-    match: '^\s*.*:'
+    match: '^\s*\w+:'
     name: 'entity.name.tag.loongarch'
   jmp_number_labels:
     # labels in jmp instructions (1b)

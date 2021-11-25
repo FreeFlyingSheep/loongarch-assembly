@@ -18,8 +18,14 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 - Support for comment shortcuts.
 
-## [1.1.1] - 2021-09-15
+## [1.1.1] - 2021-11-24
 
 ### Changed
 
 - Fix highlighting for terms like `$r0`.
+
+## [1.1.2] - 2021-11-25
+
+### Changed
+
+- Fix highlighting for comments like `// xxx: xxx`.
