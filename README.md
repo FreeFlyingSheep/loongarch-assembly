@@ -22,6 +22,15 @@ $ npm install js-yaml --save-dev
 
 # Use the command-line tool to convert the yaml grammar to json
 $ npx js-yaml syntaxes/loongarch.tmLanguage.yaml > syntaxes/loongarch.tmLanguage.json
+
+# Update package-lock.json
+$ npm install
+
+# Install vsce for packaging, publishing and managing VS Code extensions
+$ npm install -g vsce
+
+# Package the extension
+$ vsce package
 ```
 
 ## Known Issues
@@ -48,6 +57,10 @@ Fix highlighting for terms like `$r0`.
 ### 1.1.2
 
 Fix highlighting for comments like `// xxx: xxx`.
+
+### 1.1.3
+
+Change the minimum version of VS Code API that the extension depends on.
 
 ## Reference
 

@@ -29,3 +29,9 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ### Changed
 
 - Fix highlighting for comments like `// xxx: xxx`.
+
+## [1.1.3] - 2021-11-26
+
+### Changed
+
+- Change the minimum version of VS Code API that the extension depends on.
