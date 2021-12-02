@@ -4,17 +4,10 @@ An extension that provides language support for LoongArch assembly language.
 
 ## Features
 
-Provide syntax highlighting for LoongArch assembly language.
+* Provide syntax highlighting for LoongArch assembly language.
+* Provide support for comment shortcuts.
 
-Screenshot:
-
-* Color theme: Dark+
-![dark](images/dark.png)
-
-* Color theme: Light+
-![light](images/light.png)
-
-## Requirements
+## Developing
 
 ```bash
 # Install js-yaml as a development only dependency in your extension
@@ -62,6 +55,12 @@ Fix highlighting for comments like `// xxx: xxx`.
 
 Change the minimum version of VS Code API that the extension depends on.
 
+### 1.1.4
+
+Fix highlighting for words like `kernelsp`.
+
+Remove highlighting for registers not beginning with `$`.
+
 ## Reference
 
 * [Vscode Language Extensions, Syntax Highlight Guide](https://code.visualstudio.com/api/language-extensions/syntax-highlight-guide)
@@ -70,4 +69,3 @@ Change the minimum version of VS Code API that the extension depends on.
 * [LoongArch Opcodes](https://sourceware.org/git/?p=binutils-gdb.git;a=blob;f=opcodes/loongarch-opc.c)
 * [Assembler Directives](https://sourceware.org/binutils/docs/as/Pseudo-Ops.html#Pseudo-Ops)
 * [Directives](https://gcc.gnu.org/onlinedocs/cpp/Index-of-Directives.html#Index-of-Directives_fn_symbol-1)
-* [Test File](https://github.com/loongson/linux/blob/loongarch-next/arch/loongarch/kernel/head.S)

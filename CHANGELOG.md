@@ -35,3 +35,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ### Changed
 
 - Change the minimum version of VS Code API that the extension depends on.
+
+## [1.1.4] - 2021-12-02
+
+### Changed
+
+- Fix highlighting for words like `kernelsp`.
+- Remove highlighting for registers not beginning with `$`.

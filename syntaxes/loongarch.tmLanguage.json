@@ -160,35 +160,35 @@
       ]
     },
     "r_normal_registers": {
-      "match": "\\$(r9|r8|r7|r6|r5|r4|r31|r30|r3|r29|r28|r27|r26|r25|r24|r23|r22|r21|r20|r2|r19|r18|r17|r16|r15|r14|r13|r12|r11|r10|r1|r0)\\b",
+      "match": "\\B\\$(r9|r8|r7|r6|r5|r4|r31|r30|r3|r29|r28|r27|r26|r25|r24|r23|r22|r21|r20|r2|r19|r18|r17|r16|r15|r14|r13|r12|r11|r10|r1|r0)\\b",
       "name": "storage.loongarch"
     },
     "r_lp64_registers": {
-      "match": "\\$?(zero|x|v1|v0|tp|t8|t7|t6|t5|t4|t3|t2|t1|t0|sp|s8|s7|s6|s5|s4|s3|s2|s1|s0|ra|fp|a7|a6|a5|a4|a3|a2|a1|a0)\\b",
+      "match": "\\B\\$(zero|x|v1|v0|tp|t8|t7|t6|t5|t4|t3|t2|t1|t0|sp|s8|s7|s6|s5|s4|s3|s2|s1|s0|ra|fp|a7|a6|a5|a4|a3|a2|a1|a0)\\b",
       "name": "storage.loongarch"
     },
     "f_normal_registers": {
-      "match": "\\$(f9|f8|f7|f6|f5|f4|f31|f30|f3|f29|f28|f27|f26|f25|f24|f23|f22|f21|f20|f2|f19|f18|f17|f16|f15|f14|f13|f12|f11|f10|f1|f0)\\b",
+      "match": "\\B\\$(f9|f8|f7|f6|f5|f4|f31|f30|f3|f29|f28|f27|f26|f25|f24|f23|f22|f21|f20|f2|f19|f18|f17|f16|f15|f14|f13|f12|f11|f10|f1|f0)\\b",
       "name": "storage.loongarch"
     },
     "f_lp64_registers": {
-      "match": "\\$?(fv1|fv0|ft9|ft8|ft7|ft6|ft5|ft4|ft3|ft2|ft15|ft14|ft13|ft12|ft11|ft10|ft1|ft0|fs7|fs6|fs5|fs4|fs3|fs2|fs1|fs0|fa7|fa6|fa5|fa4|fa3|fa2|fa1|fa0)\\b",
+      "match": "\\B\\$(fv1|fv0|ft9|ft8|ft7|ft6|ft5|ft4|ft3|ft2|ft15|ft14|ft13|ft12|ft11|ft10|ft1|ft0|fs7|fs6|fs5|fs4|fs3|fs2|fs1|fs0|fa7|fa6|fa5|fa4|fa3|fa2|fa1|fa0)\\b",
       "name": "storage.loongarch"
     },
     "c_normal_registers": {
-      "match": "\\$(scr3|scr2|scr1|scr0)\\b",
+      "match": "\\B\\$(scr3|scr2|scr1|scr0)\\b",
       "name": "storage.loongarch"
     },
     "cr_normal_registers": {
-      "match": "\\$(fcc7|fcc6|fcc5|fcc4|fcc3|fcc2|fcc1|fcc0)\\b",
+      "match": "\\B\\$(fcc7|fcc6|fcc5|fcc4|fcc3|fcc2|fcc1|fcc0)\\b",
       "name": "storage.loongarch"
     },
     "v_normal_registers": {
-      "match": "\\$(vr9|vr8|vr7|vr6|vr5|vr4|vr31|vr30|vr3|vr29|vr28|vr27|vr26|vr25|vr24|vr23|vr22|vr21|vr20|vr2|vr19|vr18|vr17|vr16|vr15|vr14|vr13|vr12|vr11|vr10|vr1|vr0)\\b",
+      "match": "\\B\\$(vr9|vr8|vr7|vr6|vr5|vr4|vr31|vr30|vr3|vr29|vr28|vr27|vr26|vr25|vr24|vr23|vr22|vr21|vr20|vr2|vr19|vr18|vr17|vr16|vr15|vr14|vr13|vr12|vr11|vr10|vr1|vr0)\\b",
       "name": "storage.loongarch"
     },
     "x_normal_registers": {
-      "match": "\\$(xr9|xr8|xr7|xr6|xr5|xr4|xr31|xr30|xr3|xr29|xr28|xr27|xr26|xr25|xr24|xr23|xr22|xr21|xr20|xr2|xr19|xr18|xr17|xr16|xr15|xr14|xr13|xr12|xr11|xr10|xr1|xr0)\\b",
+      "match": "\\B\\$(xr9|xr8|xr7|xr6|xr5|xr4|xr31|xr30|xr3|xr29|xr28|xr27|xr26|xr25|xr24|xr23|xr22|xr21|xr20|xr2|xr19|xr18|xr17|xr16|xr15|xr14|xr13|xr12|xr11|xr10|xr1|xr0)\\b",
       "name": "storage.loongarch"
     },
     "opcodes": {
