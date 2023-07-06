@@ -69,6 +69,10 @@ Add highlighting for FCSR registers.
 
 Add highlighting for LVZ, LBT, LSX and LASX instructions.
 
+### 1.2.1
+
+Fix missing highlighting.
+
 ## Reference
 
 * [Vscode Language Extensions, Syntax Highlight Guide](https://code.visualstudio.com/api/language-extensions/syntax-highlight-guide)

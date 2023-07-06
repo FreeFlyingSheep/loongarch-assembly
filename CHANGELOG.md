@@ -50,3 +50,9 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 - Add highlighting for more escape sequences.
 - Add highlighting for FCSR registers.
 - Add highlighting for LVZ, LBT, LSX and LASX instructions.
+
+## [1.2.1] - 2023-07-06
+
+### Changed
+
+- Fix missing highlighting.
