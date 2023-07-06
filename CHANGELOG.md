@@ -42,3 +42,11 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 - Fix highlighting for words like `kernelsp`.
 - Remove highlighting for registers not beginning with `$`.
+
+## [1.2.0] - 2023-07-06
+
+### Added
+
+- Add highlighting for more escape sequences.
+- Add highlighting for FCSR registers.
+- Add highlighting for LVZ, LBT, LSX and LASX instructions.

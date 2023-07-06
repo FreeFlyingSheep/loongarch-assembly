@@ -61,11 +61,19 @@ Fix highlighting for words like `kernelsp`.
 
 Remove highlighting for registers not beginning with `$`.
 
+### 1.2.0
+
+Add highlighting for more escape sequences.
+
+Add highlighting for FCSR registers.
+
+Add highlighting for LVZ, LBT, LSX and LASX instructions.
+
 ## Reference
 
 * [Vscode Language Extensions, Syntax Highlight Guide](https://code.visualstudio.com/api/language-extensions/syntax-highlight-guide)
 * [Language Grammars, Naming Conventions](https://macromates.com/manual/en/language_grammars#naming_conventions)
 * [Regular Expressions](https://raw.githubusercontent.com/kkos/oniguruma/master/doc/RE)
-* [LoongArch Opcodes](https://sourceware.org/git/?p=binutils-gdb.git;a=blob;f=opcodes/loongarch-opc.c)
-* [Assembler Directives](https://sourceware.org/binutils/docs/as/Pseudo-Ops.html#Pseudo-Ops)
-* [Directives](https://gcc.gnu.org/onlinedocs/cpp/Index-of-Directives.html#Index-of-Directives_fn_symbol-1)
+* [LoongArch Opcodes](https://sourceware.org/git/?p=binutils-gdb.git;a=blob_plain;f=opcodes/loongarch-opc.c;hb=HEAD)
+* [Assembler Directives](https://sourceware.org/binutils/docs/as/Pseudo-Ops.html)
+* [Directives](https://gcc.gnu.org/onlinedocs/cpp/Index-of-Directives.html)
